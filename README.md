@@ -6,7 +6,7 @@ This project presents an end-to-end data cleaning, data engineering, and Explora
 ---
 
 ## 🛠️ Phase 1: Data Cleaning & Staging Architecture
-Raw datasets often contain syntactical inconsistencies, formatting anomalies, and duplicate entries. To preserve data integrity, a multi-stage staging architecture was implemented:
+Raw datasets often contain syntactical inconsistencies, formatting anomalies, and duplicate entries. To preserve data integrity, a multi-stage staging architecture was implemented;
 
 1. **Schema Standardization:** Addressed multi-word attribute conflicts containing spaces (e.g., `Transaction ID`, `Product Category`) by applying explicit backtick identifier boundaries across all DDL and DML operations.
 2. **Duplicate Detection via Window Functions:** Engineered custom staging tables (`sales_staging2`) incorporating `ROW_NUMBER() OVER (PARTITION BY ...)` across all primary dimensions to isolate and flag redundant transaction entries.
